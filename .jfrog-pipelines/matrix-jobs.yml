@@ -7,7 +7,6 @@ pipelines:
         configuration:
           integrations:
           - name: regcred
-          integrations:
           - name: jfpipdocker
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
