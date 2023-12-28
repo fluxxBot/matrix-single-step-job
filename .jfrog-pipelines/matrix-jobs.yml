@@ -3,7 +3,10 @@ pipelines:
     steps:     
       - name: matrix_example
         type: Matrix
-        stepMode: Bash
+        configuration:
+          integrations:
+            - name: regcred
+            - name: jfpipdocker
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
