@@ -5,7 +5,6 @@ pipelines:
         type: Matrix
         configuration:
           integrations:
-            - name: regcred
             - name: jfpipdocker
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
