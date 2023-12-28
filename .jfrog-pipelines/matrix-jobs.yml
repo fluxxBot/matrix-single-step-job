@@ -4,10 +4,6 @@ pipelines:
       - name: matrix_example
         type: Matrix
         stepMode: Bash
-        configuration:
-          integrations:
-          - name: regcred
-          - name: jfpipdocker
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
@@ -30,3 +26,4 @@ pipelines:
           onExecute:
             - echo "Executing matrix step on ${steplet_id}"
             - echo "Variation animal = ${animal}, mineral = ${mineral}, vegetable = ${vegetable}"
+            - docker run hello-world
