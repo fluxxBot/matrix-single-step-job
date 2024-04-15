@@ -4,8 +4,7 @@ pipelines:
       - name: matrix_example
         type: Matrix
         configuration:
-          integrations:
-            - name: jfpipdocker
+          multiNode: true
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
@@ -15,17 +14,9 @@ pipelines:
               mineral:   iron
               vegetable: broccoli
             - animal:    lizard             # - Set 3
-              mineral:   lead   
-          runtimes:
-            - type: image
-              image:
-                auto:
-                  language: node
-                  versions:
-                    - "14.19.1"       
+              mineral:   lead
               
         execution:
           onExecute:
             - echo "Executing matrix step on ${steplet_id}"
             - echo "Variation animal = ${animal}, mineral = ${mineral}, vegetable = ${vegetable}"
-            - docker run hello-world
