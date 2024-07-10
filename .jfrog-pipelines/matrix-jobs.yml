@@ -4,7 +4,7 @@ pipelines:
       - name: matrix_example
         type: Matrix
         configuration:
-          multiNode: false
+          multiNode: true
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
